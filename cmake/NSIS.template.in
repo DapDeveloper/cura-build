@@ -542,24 +542,24 @@ FunctionEnd
 !include "FileAssociation.nsh"
 
 Section /o "Open 3MF files with Cura"
-    ${RegisterExtension} "$INSTDIR\Cura.exe" ".3mf" "@CPACK_PACKAGE_NAME_NO_WHITESPACES@.3mf.@CPACK_PACKAGE_VERSION_MAJOR@.@CPACK_PACKAGE_VERSION_MINOR@" "3MF model file"
+    ${RegisterExtension} "$INSTDIR\MTCSlicer.exe" ".3mf" "@CPACK_PACKAGE_NAME_NO_WHITESPACES@.3mf.@CPACK_PACKAGE_VERSION_MAJOR@.@CPACK_PACKAGE_VERSION_MINOR@" "3MF model file"
 SectionEnd
 
 Section /o "Open OBJ files with Cura"
-    ${RegisterExtension} "$INSTDIR\Cura.exe" ".obj" "@CPACK_PACKAGE_NAME_NO_WHITESPACES@.obj.@CPACK_PACKAGE_VERSION_MAJOR@.@CPACK_PACKAGE_VERSION_MINOR@" "OBJ model file"
+    ${RegisterExtension} "$INSTDIR\MTCSlicer.exe" ".obj" "@CPACK_PACKAGE_NAME_NO_WHITESPACES@.obj.@CPACK_PACKAGE_VERSION_MAJOR@.@CPACK_PACKAGE_VERSION_MINOR@" "OBJ model file"
 SectionEnd
 
 Section "Open STL files with Cura"
-    ${RegisterExtension} "$INSTDIR\Cura.exe" ".stl" "@CPACK_PACKAGE_NAME_NO_WHITESPACES@.stl.@CPACK_PACKAGE_VERSION_MAJOR@.@CPACK_PACKAGE_VERSION_MINOR@" "STL model file"
+    ${RegisterExtension} "$INSTDIR\MTCSlicer.exe" ".stl" "@CPACK_PACKAGE_NAME_NO_WHITESPACES@.stl.@CPACK_PACKAGE_VERSION_MAJOR@.@CPACK_PACKAGE_VERSION_MINOR@" "STL model file"
 SectionEnd
 
 Section /o "Open X3D files with Cura"
-    ${RegisterExtension} "$INSTDIR\Cura.exe" ".x3d" "@CPACK_PACKAGE_NAME_NO_WHITESPACES@.x3d.@CPACK_PACKAGE_VERSION_MAJOR@.@CPACK_PACKAGE_VERSION_MINOR@" "X3D model file"
+    ${RegisterExtension} "$INSTDIR\MTCSlicer.exe" ".x3d" "@CPACK_PACKAGE_NAME_NO_WHITESPACES@.x3d.@CPACK_PACKAGE_VERSION_MAJOR@.@CPACK_PACKAGE_VERSION_MINOR@" "X3D model file"
 SectionEnd
 
 Section /o "Open GCODE files with Cura"
-    ${RegisterExtension} "$INSTDIR\Cura.exe" ".gcode" "@CPACK_PACKAGE_NAME_NO_WHITESPACES@.gcode.@CPACK_PACKAGE_VERSION_MAJOR@.@CPACK_PACKAGE_VERSION_MINOR@" "GCODE model file"
-    ${RegisterExtension} "$INSTDIR\Cura.exe" ".g"     "@CPACK_PACKAGE_NAME_NO_WHITESPACES@.g.@CPACK_PACKAGE_VERSION_MAJOR@.@CPACK_PACKAGE_VERSION_MINOR@"     "GCODE model file"
+    ${RegisterExtension} "$INSTDIR\MTCSlicer.exe" ".gcode" "@CPACK_PACKAGE_NAME_NO_WHITESPACES@.gcode.@CPACK_PACKAGE_VERSION_MAJOR@.@CPACK_PACKAGE_VERSION_MINOR@" "GCODE model file"
+    ${RegisterExtension} "$INSTDIR\MTCSlicer.exe" ".g"     "@CPACK_PACKAGE_NAME_NO_WHITESPACES@.g.@CPACK_PACKAGE_VERSION_MAJOR@.@CPACK_PACKAGE_VERSION_MINOR@"     "GCODE model file"
 SectionEnd
 
 ;--------------------------------
@@ -894,8 +894,8 @@ Section "Uninstall"
   ${UnRegisterExtension} ".g"     "@CPACK_PACKAGE_NAME_NO_WHITESPACES@.g.@CPACK_PACKAGE_VERSION_MAJOR@.@CPACK_PACKAGE_VERSION_MINOR@"
 
   ;Remove executable from MuiCache
-  DeleteRegKey HKCR "Local Settings\Software\Microsoft\Windows\Shell\MuiCache\$INSTDIR\Cura.exe.ApplicationCompany"
-  DeleteRegKey HKCR "Local Settings\Software\Microsoft\Windows\Shell\MuiCache\$INSTDIR\Cura.exe.FriendlyAppName"
+  DeleteRegKey HKCR "Local Settings\Software\Microsoft\Windows\Shell\MuiCache\$INSTDIR\MTCSlicer.exe.ApplicationCompany"
+  DeleteRegKey HKCR "Local Settings\Software\Microsoft\Windows\Shell\MuiCache\$INSTDIR\MTCSlicer.exe.FriendlyAppName"
 
   ;Remove the uninstaller itself.
   Delete "$INSTDIR\Uninstall.exe"

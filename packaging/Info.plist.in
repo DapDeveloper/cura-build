@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
     <key>CFBundleIdentifier</key>
-    <string>nl.ultimaker.cura</string>
+    <string>MTCSlicer</string>
     <key>CFBundleName</key>
-    <string>Ultimaker Cura</string>
+    <string>MTCSlicer</string>
     <key>CFBundleDisplayName</key>
-    <string>Ultimaker Cura</string>
+    <string>MTCSlicer</string>
     <key>CFBundleVersion</key>
     <string>@CURA_VERSION@</string>
     <key>CFBundleDevelopmentRegion</key>
     <string>English</string>
     <key>CFBundleExecutable</key>
-    <string>cura</string>
+    <string>MTCSlicer</string>
     <key>CFBundleIconFile</key>
     <string>icon.icns</string>
     <key>CFBundleInfoDictionaryVersion</key>

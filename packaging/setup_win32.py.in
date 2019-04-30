@@ -167,7 +167,7 @@ build_options = {
 executables = [
     Executable(script="@EXTERNALPROJECT_INSTALL_PREFIX@/bin/cura_app.py",
                base="Win32GUI",
-               targetName = "Cura.exe",
+               targetName = "MTCSlicer.exe",
                icon="@CMAKE_SOURCE_DIR@/packaging/cura.ico"
                ),
     Executable(script="@EXTERNALPROJECT_INSTALL_PREFIX@/bin/cura_app.py",
@@ -179,12 +179,12 @@ executables = [
 ]
 
 setup(
-    name = "Ultimaker Cura",
-    version = "@CURA_VERSION_MAJOR@.@CURA_VERSION_MINOR@.@CURA_VERSION_PATCH@",
-    description = "Ultimaker Cura",
-    long_description = "Ultimaker Cura - 3D Printing Software",
-    author = "Ultimaker B.V.",
-    url = "http://software.ultimaker.com/",
+    name = "MTCSlicer",
+    version = "1.1.0",
+    description = "MTCSlicer",
+    long_description = "MTCSlicer - 3D Printing Software",
+    author = "MTCSlicer",
+    url = "http://mtcslicer.meccatonicore.com/",
     license = "GNU LESSER GENERAL PUBLIC LICENSE (LGPL)",
 
     options = {"build_exe": build_options},

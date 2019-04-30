@@ -53,24 +53,24 @@ endif()
 
 include(CPackComponent)
 
-cpack_add_component(_cura DISPLAY_NAME "Ultimaker Cura Executable and Data Files" REQUIRED)
+cpack_add_component(_cura DISPLAY_NAME "MTCSlicer Executable and Data Files" REQUIRED)
 cpack_add_component(vcredist DISPLAY_NAME "Install Visual Studio 2015 Redistributable")
 cpack_add_component(arduino DISPLAY_NAME "Install Arduino Drivers")
 
 set(CPACK_GENERATOR "NSIS")
-set(CPACK_PACKAGE_NAME "Ultimaker Cura")
+set(CPACK_PACKAGE_NAME "MTCSlicer")
 string(REPLACE " " "" CPACK_PACKAGE_NAME_NO_WHITESPACES ${CPACK_PACKAGE_NAME})
-set(CPACK_PACKAGE_VENDOR "Ultimaker")
-set(CPACK_PACKAGE_VERSION_MAJOR ${CURA_VERSION_MAJOR})
-set(CPACK_PACKAGE_VERSION_MINOR ${CURA_VERSION_MINOR})
-set(CPACK_PACKAGE_VERSION_PATCH ${CURA_VERSION_PATCH})
-set(CPACK_PACKAGE_VERSION ${CURA_VERSION})
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Ultimaker Cura - 3D Printing Software")
+set(CPACK_PACKAGE_VENDOR "MTCSlicer")
+set(CPACK_PACKAGE_VERSION_MAJOR "1")
+set(CPACK_PACKAGE_VERSION_MINOR "1")
+set(CPACK_PACKAGE_VERSION_PATCH "0")
+set(CPACK_PACKAGE_VERSION "1.1")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "MTCSlicer - 3D Printing Software")
 set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_SOURCE_DIR}/packaging/cura_license)
-set(CPACK_PACKAGE_CONTACT "Ruben Dulek <r.dulek@ultimaker.com>")
+set(CPACK_PACKAGE_CONTACT "daniel@meccatronicore.com")
 
-set(CPACK_PACKAGE_EXECUTABLES Cura "Ultimaker Cura ${CURA_VERSION_MAJOR}.${CURA_VERSION_MINOR}.${CURA_VERSION_PATCH}")
-set(CPACK_PACKAGE_INSTALL_DIRECTORY "Ultimaker Cura ${CURA_VERSION_MAJOR}.${CURA_VERSION_MINOR}")
+set(CPACK_PACKAGE_EXECUTABLES MTCSlicer "MTCSlicer 1.1.0")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "MTCSlicer 1.1.0")
 
 # CPackNSIS
 set(CPACK_NSIS_ENABLE_UNINSTALL_BEFORE_INSTALL ON)
@@ -86,7 +86,7 @@ set(CPACK_NSIS_MENU_LINKS
 
 set(CPACK_NSIS_MUI_WELCOMEFINISHPAGE_BITMAP ${CMAKE_SOURCE_DIR}\\\\packaging\\\\cura_banner.bmp)    # note: fails with forward '/'
 set(CPACK_NSIS_MUI_UNWELCOMEFINISHPAGE_BITMAP ${CMAKE_SOURCE_DIR}\\\\packaging\\\\cura_banner.bmp)
-set(CPACK_NSIS_INSTALLER_MUI_FINISHPAGE_RUN_CODE "!define MUI_FINISHPAGE_RUN \\\"$WINDIR\\\\explorer.exe\\\"\n!define MUI_FINISHPAGE_RUN_PARAMETERS \\\"$INSTDIR\\\\Cura.exe\\\"")	# Hack to ensure Cura is not started with admin rights
+set(CPACK_NSIS_INSTALLER_MUI_FINISHPAGE_RUN_CODE "!define MUI_FINISHPAGE_RUN \\\"$WINDIR\\\\explorer.exe\\\"\n!define MUI_FINISHPAGE_RUN_PARAMETERS \\\"$INSTDIR\\\\MTCSlicer.exe\\\"")	# Hack to ensure Cura is not started with admin rights
 
 # Needed to call the correct vcredist_x["32", "64"] executable
 # TODO: Use a variable, which is already known. For example CPACK_SYSTEM_NAME -> "win32"
